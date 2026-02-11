@@ -9,6 +9,12 @@
 | --- | --- | --- | --- |
 | BSc (hons) Psychology | Leeds Beckett University | 2015 - 2018 | 2:1 |
 
+### Technical Skills
+* Power BI
+* Project management
+* Critical problem solving
+* Automation & Optimisation
+
 
 [BPP Website](https://www.bpp.com) 
 
