@@ -1,6 +1,6 @@
 # My Portfolio 
 
-![Histogram](images/historgram-example.png)
+![Histogram](images/histogram-example.png)
 
 ## About Me
 
