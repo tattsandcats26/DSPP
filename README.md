@@ -24,7 +24,7 @@ I am currently completing my Level 6 Data Science Degree/Apprenticeship.
 
 
 ## Projects
-Data Science Project aiming to understand the differences between Critic and User Reviews using Metacritic Data from Kaggle [Metacritic Data]([https://www.kaggle.com/datasets/mohamedasak/metacritic-games-dataset]) 
+Data Science Project aiming to understand the differences between Critic and User Reviews using Metacritic Data from Kaggle [https://www.kaggle.com/datasets/mohamedasak/metacritic-games-dataset]
 
 ### Executive summary
 
@@ -41,7 +41,7 @@ After initially investigating the data available, the hypothesis will test that 
 The key transformations are listed below to ensure the data is clean and robust for using throughout the project.
 
 The ‘platform’ column was transformed in two different ways by duplicating the dataset. The original column contained comma separated values and had duplicate platforms in different orders. Therefore, individual platforms were needed, along with how many platforms a game was available on (shown below respectively). 
-![Splitting into Rows for individual platforms](image/Splitting into Rows.png)
+![Splitting into Rows for individual platforms](images/Splitting-into-Rows.png) 
 ![Splitting into Columns for Games with multiple platforms](images/Splitting into Columns.png)
 
 
