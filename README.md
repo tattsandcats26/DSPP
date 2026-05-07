@@ -32,35 +32,35 @@ This project investigates video game review comparisons using Metacritic ratings
 
 The Metacritic gaming data was sourced from Kaggle, which contained a collection of video game ratings from critics and users along with other metadata (Adel, 2026). Metascores (from the critics) are a weighted aggregated average of numerous critic reviews for that title, as some reviews are more detailed and carry more prestige (Metacritic support, 2024a). The CSV was loaded into Power BI where transformations took place using Power Query as this low-code solution is user friendly and intuitive (Microsoft, 2026b).
 
-After initially investigating the data available, the hypothesis will test that a game’s characteristics, such as genre, platform and release year, influence the likelihood of a significant difference between critic and user review scores. 
+Hypothesising that certain features of a game like genre, platform and release year could increase the likelihood of a significant score gap between critics and users rating the games. 
 
 #### Transformations:
 
 The key transformations are listed below to ensure the data is clean and robust for using throughout the project.
 
-* The ‘platform’ column was transformed in two different ways by duplicating the dataset. The original column contained comma separated values and had duplicate platforms in different orders.
-
-* Therefore, individual platforms were needed:  
+* The ‘platform’ column was transformed in two different ways by duplicating the dataset.
+* This is because the original column contained multiple string entries such as "Xbox,PlayStation 4,PC" and "PC,Xbox,PlayStation 4" and would report as different entries despite having the same platforms.
+* I split the column by comma separating values and did this in two different ways. One, I split into rows to separate out each platform to get the individual platforms as shown below: 
 
 ![Splitting into Rows for individual platforms](images/Splitting-into-Rows.png) 
 
-* Along with how many platforms a game was available on:
+* And then I split the other data set into multiple columns to list each platform the game was availble on, this is shown below:
 
 ![Splitting into Columns for Games with multiple platforms](images/Splitting-into-Columns.png)
 
-* Missing values were replaced with 'Unknowns' for several columns:
+* I replaced missing values with 'Unknowns' for several columns such as description, publisher and rating as these were key columns to investigate and removing too many values would have skewed the data:
 
 ![Missing values](images/missing-values-handling.png)
 
-* Removed nulls for Metascores and Release Date as using imputated values would introduce bias.
+* I removed nulls for Metascores and Release Date as using imputated values such as the avergae would introduce bias as the scores and release years are specific data points. There were only one case of each, therefore this was simpler to remove from the dataset.
   
 ![Removed Nulls](images/removed-nulls.png)
 
-* Removed column causing errors:
+* One column Platfrom Metascores was presented as multiple scores together causing a formatting error. Due to not knowing which score belonged to which platform and it not being vital, this was removed:
 
 ![Removed Errors](images/errors-removed.png)
 
-* Created Calculated Columns:
+* I created Calculated Columns such as the score gap by subtracting the user score from the critic score, then I added another column to make this number absolute - regardless of which way the score difference way, it needed to be positive:
 
 ![Score Gap](images/score-gap.png)
 
@@ -74,8 +74,8 @@ The key transformations are listed below to ensure the data is clean and robust 
 
 ![Advanced Editor Details](images/Advanced-Editor-not-Duplicated.png)
 
-Initially, Python was used to show a distribution of score gaps. The second/third columns sat around a 10-point difference, indicating a more significant gap than the lower end. Due to the scale being from 0-100, a difference greater than 10% seemed reasonable (see Screenshot below). 
-When calculating the ‘SignificantScoreGap’ column (end of Table 1), the ‘10’ from the histogram was used to create a binary column. Power BI came with the ease of creating and interpreting visuals that are dynamic and can give further insight than a static graph.  
+Initially, Python was used to show a distribution of score gaps. Afte examining the histogram, a siginficant difference appeared around the 10-point mark, indicating a more significant gap than the lower end. Due to the scale being from 0-100, a difference greater than 10% seemed reasonable (see Screenshot below). 
+When calculating the ‘SignificantScoreGap’ column (end of Table 1), the ‘10’ from the histogram was used to create a binary column.  
 
 ![Hist](images/hist.png)
 
