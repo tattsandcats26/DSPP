@@ -81,42 +81,44 @@ When calculating the ‘SignificantScoreGap’ column (end of Table 1), the ‘1
 
 ### Analysis and Visualisations
 
-The analysis was conducted in Power BI due to the wide array of visuals available and the ability to explore patterns, trends and how the different features affected scores. The dynamic capabilities meant the user could drill down and see how statistics change. 
+The analysis was conducted in Power BI due to the wide array of visuals available and the ability to explore patterns, trends and how the different features affected scores.
 
-Initially, average comparisons were made between the scores of users and critics. The four features chosen to examine were ‘genre’, the number of platforms (‘platform category’), ‘release year’ and the individual ‘platforms’. Averages across the board were higher from critics regardless of the feature (Screenshot below). Critics scores had been on a steady incline since 2010, whereas users had more variation in the peaks and troughs of scores. There could be a multitude of reasons for that; the quality of games is getting better, but there’s also more games out there than before. 
+I initially compared average scores between users and critics over four different features - genre, number of platfroms, release year and individual platforms. Overall critics rated all categories higher than users, with particular differences shown with games on 1 platform, the 'adventure' genre and reviews on Xbox - but this is an older console which was released in 2001 (Hunter, 2026) which perhaps could be excluded from the dataset to focus on more up-to-date consoles and games. But the changing trends and comparisons of older consoles could also be considered here. 
+The scores for critics has increased over the years which could be due to more AAA games being released or the quality of games and number of games is higher than ever before. 
 
-There are some nuances where there is a more significant difference in the ‘adventure’ genre and games on ‘Xbox’; albeit this is a much older console which was released in 2001 (Hunter, 2026). Both critics and users will rate a game higher when available on more than four platforms potentially showing the breadth of the game and the availability of users to play and review.
+Both critics and users will give a game a higher score when it is cross-platform, reaching a wider audience to review and shows the resources available from the developer to publish on different platforms.
 
 ![Comparing Scores](images/comparing-user-critic-scores.png)
 
-Conceptually, modelling was done to see the percentage score gap between users and critics and where these were highest. The screenshot below confirms the percentage difference, whereas Screenshot above showed the average score differences. The top 10 genres were explored to see where the differences were for a higher number of players. As previously discussed, ‘adventure’ had a 46% difference between users and critics, this could be due to adventure covering a wide array of games and users having a different experience. Sentiment analysis investigated some of these differences later in the report. 
+Conceptually, modelling was done to see the percentage score gap between users and critics and where these were highest. Percentage differences were investigated across significant score gaps - so this was only those games where the gap was wider than 10 points between users and critics. 
+The 'adventure' genre had the highest differnce at 46% suggesting a large difference between the review groups. The reasons for this difference would need to be further investigated, but the genre as a whole is broad and could cover a wide-variety of games. Additionally, games are tagged with multiple genres, so a title could be assigned numerous genre. Further research into how the priamry genre is assigned to a game is needed. 
 
-Point and click games, PlayStation 4 and games on multiple platforms had the lowest score gaps overall. However, the gap is widening again (above 40%) in later years suggesting more is at play, especially with a score gap of ~10 points between the two groups. IGN (no date), discussed how they reviewed games matching the person with expertise in that genre, want to experience games pushing boundaries and use a 10-point scale: 1 – unbearable, 5 – mediocre, 10 – masterpiece. However, not all critics will review the same so bias could occur.
+Point and click games, PlayStation 4 and games on multiple platforms had the lowest score gaps overall. This shows a wide range of features from different areas affect the score differences - there was still a signigicant gap between the groups, but these were the lowest of the top 10. 
+
+The score gap is on an upward trend for recent years over 40% suggesting critics and users have different criteria for scoring their review. IGN (no date) detailed their review process as they try to match a person familair with te genre when reviewing the game, making it a more fair and balanced review. 
+Games that receive higher scores from IGN are those pushing the boundaries and doing something new in the space. The scale for game ratings is between 1-10 where 1 – unbearable, 5 – mediocre, 10 – masterpiece. This is subjective still, despite the attempt at making the reviews objective. 
+Some people speculate that some critics already have a base score when rating a game and add additional points for story, pushing boundaries etc, therefore bias could be present and scores need to be taken with some speculation. Additionally, Metacritic stated the score is a _weighted_ average where some have a larger sway in the overall score. 
 
 ![Significant Score Diffs](images/sig-score-gap-diffs.png)
 
-To investigate whether critics or users were reviewing higher, the direction of sentiment was calculated using DAX (Screenshot below). 
+To investigate whether critics or users were reviewing higher, the direction of sentiment was calculated using DAX (Screenshot below). This used the groupings from Metacritic Support (2024b) where critics and users use the same groups. The groupings are broad where the top games are within 10 points, and the average games have a 24 point range. 
 
 ![DAX](images/DAX.png)
 
-The sentiments were included as part of the dataset and Metacritic Support (2024b) listed the grouped categories both critics and users use to review games (Screenshot below). 
-
 ![Metacritic Scores](images/Metacritc-scores.png)
 
-More often the same sentiment was found between the two groups, but the Screenshot below highlights any differences in direction. Despite critics rating higher on average, when it came to sentiment differences, users rated games higher than critics overall (Screenshot 6). This occurred due to the large groupings where a score of 65 and 74 are both ‘mixed or average’ but the scores alone would show a larger difference. The top individual platforms with a high critic/user difference were PlayStation 2, DS and Xbox, where users had more positive experiences with these consoles. 
+More often the same sentiment was found between the two groups, but the Screenshot below highlights whether users or critics rated them higher. Despite critics rating higher on average, when it came to sentiment differences, users rated games higher than critics overall. As mentioned previously, the groups are very large for some categories like 'mixed or average' where a score of 55 and 72 are in the same category. But for a game that has 'Universal Acclaim' it needs to be 90 or above (100 = max). The graphs predominantly show where differences between the groups occur, with greatest gaps (users rating higher) occurred  in games on 1 platform, 'action adventure' genre, and '3D platform'. The trends over time are simialr for whether users or critics rate higher though.
 
 ![Sentiment Diffs](images/sentiment-diffs.png)
 
 ### Recommendations
 
-The investigation of user and critic differences in video game scoring has been enlightening. Various factors such as genres, platform, number of platforms and release year have shown different patterns of significant score differences. The score gap was rising in recent years, the ‘adventure’ genre portrayed high differences along with games on only one platform. 
+This investigation has been interesting and highlighted how much more research can be done into the area to see which factors impact the most. For example looking into individual platforms and seeing how the patterns alter. Alternatively, games could be grouped into Indie, AA and AAA games to determine any significant differences in ratings. Games are categorised dependent on the budget, team and resources available. Indie games have much smaller team and budget, whereas AAA games have huge budgets and develop larger games (Inlingo, 2024).
 
-In the future, the patterns conveyed could be drilled into further. For example, investigating PC as it stood out on Screenshot 6 and how it compared for the genres/ratings. Alternatively, games could be grouped into Indie, AA and AAA games to determine any significant differences in ratings. Games are categorised dependent on the budget, team and resources available. Indie games have much smaller team and budget, whereas AAA games have huge budgets and develop larger games (Inlingo, 2024).
+Looking into the statistical significance using Python would be what I'd do next to determien if the gaps are significant with the p value < 0.05. 
+Scikit-learn could then be used within Python to complete logistic regression by building a train/test model with the stated features and the significant score gap to determine accuracy, recall and precision scores of the model and adjust the parameters if needed. 
 
-The next steps would be to import the data into Python and investigate statistical significance of the results to determine if the percentage gap is as big as Power BI portrays as there are limits to the statistical modelling Power BI can achieve that would be more suited to Python. However, due to time constraints Power BI was used to show conceptual modelling and how the features (genres, platform and release year) interacted with the scores. 
-Scikit-learn could be used within Python to complete logistic regression by building a train/test model with the stated features and the significant score gap to determine accuracy, recall and precision scores of the model and adjust the parameters if needed. 
-
-It’s important to remember that reviews are subjective and just because a game is reviewed with ‘Universal Acclaim’ does not mean every player will enjoy it. Similarly, a game that is rated poorer does not mean players will dislike it, but there is more power in rating a game poorly and swaying players away from it. Critics could potentially have bias in some reviews such as monetary incentives, but there is an ethical need to be as fair as possible for the player. There is potential for further exploration with this data to know what factor affects review scores the most.  
+The reviews are subjective and do not always determine whether you will enjoy or dislike a game. Lookign at genres you enjoy could be a better indicator, but not always. Exploring how critics do their reviews and whether any incentive is involved could be interesting, as most users will review when a game is either excellent or poor. Some users do have games gifted and as part of the exchange put a review on the platform. This is just the beginning of this research and more could be done in the future, 
 
 ### References
 * Adel, M. (2026) Metacritic Games Dataset, Kaggle. Available at: https://www.kaggle.com/datasets/mohamedasak/metacritic-games-dataset (Accessed: March 16 2026).
